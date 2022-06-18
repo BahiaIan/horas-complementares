@@ -9,7 +9,7 @@ export function Atividade({ dados }) {
     return (
         <TouchableOpacity style={styles.container} onPress={() => navigation.navigate(`Atividade`, dados)}>
             <Text style={styles.descricao}>
-                {dados.abreviacao}
+                {dados.descricao.length > 69 ? `${dados.descricao.substring(0, 70)}...`:dados.descricao}
             </Text>
         </TouchableOpacity >
     )

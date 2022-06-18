@@ -5,16 +5,11 @@ export const styles = StyleSheet.create({
     container: {
         width: '90%',
         marginTop: 20,
-        height: 120,
+        height: 180,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: theme.colors.roxo.menu,
         borderRadius: 10,
-    },
-    btnMenu: {
-        backgroundColor: theme.colors.roxo.botao,
-        marginTop: 6,
-        flex: 1
     },
     title: {
         marginBottom: 6,

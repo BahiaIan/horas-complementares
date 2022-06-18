@@ -8,7 +8,6 @@ export function HeaderPage({ title }) {
             <View style={{ alignItems: 'center' }}>
                 <View style={styles.title}>
                     <View style={styles.btnMenu}>
-
                     </View>
                     <Text style={styles.nome}>
                         {title}

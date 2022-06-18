@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: theme.colors.cinza.background
+        backgroundColor: theme.colors.amarelo.background
     },
     image: {
         width: '60%',

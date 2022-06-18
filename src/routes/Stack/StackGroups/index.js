@@ -1,10 +1,10 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { Atividade } from '../../screens/Atividade';
-import { Groups } from '../../screens/Groups';
-import { Grupo1 } from '../../screens/Groups/Grupo1';
-import { Grupo2 } from '../../screens/Groups/Grupo2';
-import { Grupo3 } from '../../screens/Groups/Grupo3';
+import { Atividade } from '../../../screens/Groups/Atividade';
+import { Groups } from '../../../screens/Groups';
+import { Grupo1 } from '../../../screens/Groups/Grupo1';
+import { Grupo2 } from '../../../screens/Groups/Grupo2';
+import { Grupo3 } from '../../../screens/Groups/Grupo3';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 

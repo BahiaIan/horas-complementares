@@ -16,8 +16,8 @@ export function Header({ title, routeToReturn }) {
                         <Icon name='arrow-left'
                             type='font-awesome'
                             size={20}
-                            color={theme.colors.roxo.botaoRetorno}
-                            onPress={() => navigation.navigate(`${routeToReturn}`)} />
+                            color={showReturn ? theme.colors.roxo.botaoRetorno:theme.colors.amarelo.profileTitle} // não consegui tirar de outra forma
+                            onPress={() => showReturn ? navigation.navigate(`${routeToReturn}`):''} />
                     </View>
                     <Text style={styles.nome}>
                         {title}

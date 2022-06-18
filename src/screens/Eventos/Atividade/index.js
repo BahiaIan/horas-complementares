@@ -1,13 +1,13 @@
 import { useRoute } from "@react-navigation/native";
 import { Text, View } from 'react-native';
-import { Header } from '../../components/Header';
+import { Header } from '../../../components/Header';
 import { styles } from './styles';
 
 export function Atividade() {
     const params = useRoute().params
     return (
         <View style={styles.container}>
-            <Header title={params.titulo} routeToReturn='Groups' />
+            <Header title={params.titulo} routeToReturn='Disponiveis' />
             <View>
                 <Text style={styles.title}>
                     Descrição:
@@ -18,34 +18,23 @@ export function Atividade() {
             </View>
             <View>
                 <Text style={styles.title}>
-                    Pontuação:
+                    Local da Atividade:
                 </Text>
                 <Text style={styles.content}>
-                    {params.pontuacao}
+                    {params.local}
                 </Text>
             </View>
             <View>
                 <Text style={styles.title}>
-                    Unidade:
+                    Requisitos para Certificação:
                 </Text>
                 <Text style={styles.content}>
-                    {params.unidade}
+                    {params.requisitoConclusao}
                 </Text>
             </View>
             <View>
                 <Text style={styles.title}>
-                    Pontuação Máxima por Semestre:
-                </Text>
-                <Text style={styles.content}>
-                    {params.maxSemestre}
-                </Text>
-            </View>
-            <View>
-                <Text style={styles.title}>
-                    Comprovante:
-                </Text>
-                <Text style={styles.content}>
-                    {params.comprovante}
+                    Atividade do Grupo {params.grupo}
                 </Text>
             </View>
         </View>
