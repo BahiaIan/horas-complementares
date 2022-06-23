@@ -20,11 +20,9 @@ export const styles = StyleSheet.create({
     },
     linha: {
         flexDirection: 'row',
-        // marginTop,
     },
     select: {
         width: '50%',
-        // marginTop,
     },
     title: {
         alignItems: 'center',

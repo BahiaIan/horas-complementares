@@ -12,6 +12,7 @@ export const theme = {
             UTFPR: "#fecc03"
         },
         roxo: {
+            field: '#d2bfe0',
             menu: '#694689',
             botao: '#8560a8',
             botaoRetorno: '#2a1c38'

@@ -10,7 +10,7 @@ const { Navigator, Screen } = createNativeStackNavigator();
 export default function () {
     return (
         <Navigator initialRouteName='Disponiveis' screenOptions={{ headerShown: false }}>
-            {/* <Screen name='Cadastro' component={Cadastro} /> */}
+            <Screen name='Cadastro' component={Cadastro} />
             <Screen name='Disponiveis' component={Disponiveis} />
             <Screen name='AtividadeEvento' component={Atividade} />
         </Navigator >

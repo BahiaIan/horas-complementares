@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     subContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        height: '80%',
+        height: '60%',
         width: '80%',
         backgroundColor: theme.colors.cinza.background
     },

@@ -5,10 +5,13 @@ export const styles = StyleSheet.create({
     container: {
         width: '100%',
     },
-    input: {
-        height: 50,
+    field: {
+        width: '92%',
         margin: 12,
+        backgroundColor:theme.colors.cinza.background,
         borderBottomWidth: 1,
-        padding: 10,
-    }
+    },
+    textField: {
+        fontSize:14,
+    },
 });
