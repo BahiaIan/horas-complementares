@@ -8,7 +8,7 @@ import { onValue, ref } from 'firebase/database';
 
 const buscarDados = () => {
     let DATA = [];
-    onValue(ref(db, '/atividadesGrupo1'), querySnapShot => {
+    onValue(ref(db, '/atividadesGrupo3'), querySnapShot => {
         DATA = [];
         for (const key of Object.keys(querySnapShot.val())) {
             const atividade = querySnapShot.val()[key];

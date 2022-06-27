@@ -1,13 +1,12 @@
-import React from "react";
+import { push, ref } from 'firebase/database';
+import React from 'react';
 import { Keyboard, KeyboardAvoidingView, Text, TouchableWithoutFeedback, View } from 'react-native';
 import { ButtonCustom } from '../../../components/ButtonCustom';
 import { Header } from '../../../components/Header';
 import { InputCustom } from '../../../components/InputCustom';
 import { SelectCustom } from '../../../components/SelectCustom';
-import { db } from "../../../config/firebaseConfig";
-import { ref, push } from 'firebase/database';
+import { db } from '../../../config/firebaseConfig';
 import { styles } from './styles';
-import { useEffect } from "react";
 
 
 export function Adicionar() {
@@ -36,7 +35,7 @@ export function Adicionar() {
             });
             onChangeDescriptionText('');
         } else {
-            console.log('não salvaou')
+            alert('Um ou mais campos estão inválidos.');
         }
     }
 

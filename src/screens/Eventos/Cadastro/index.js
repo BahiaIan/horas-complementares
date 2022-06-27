@@ -36,7 +36,7 @@ export function Cadastro() {
             onChangeLocalText('');
             onChangeRequisitoConclusaoText('');
         } else {
-            console.log('não salvaou')
+            alert('Um ou mais campos estão inválidos.');
         }
     }
 

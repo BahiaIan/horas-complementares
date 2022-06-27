@@ -1,8 +1,8 @@
 
-import React, { View } from 'react-native';
+import { View } from 'react-native';
+import 'react-native-gesture-handler';
 import { Route } from './src/routes';
 import { styles } from './styles';
-import 'react-native-gesture-handler';
 
 
 export default function App() {

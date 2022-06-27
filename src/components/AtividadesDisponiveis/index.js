@@ -12,8 +12,6 @@ export function AtividadesDisponiveis({ dados }) {
     const estilo = dados.grupo == 1 ? styles.containerGrupo1 : dados.grupo == 2 ? styles.containerGrupo2 : styles.containerGrupo3;
     const botao = dados.grupo == 1 ? 'human-edit' : dados.grupo == 2 ? 'hand-extended' : 'monitor-edit';
 
-    console.log(dados)
-
     return (
         <TouchableOpacity style={estilo} onPress={() => navigation.navigate(`AtividadeEvento`, dados)}>
             <View style={styles.btnMenu}>

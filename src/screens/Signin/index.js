@@ -1,20 +1,35 @@
-import { Image, View, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import React from 'react';
+import { Image, Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, View } from 'react-native';
 import logo from '../../assets/UTFPR.png';
 import { ButtonCustom } from '../../components/ButtonCustom';
 import { InputCustom } from '../../components/InputCustom';
 import { styles } from './styles';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 export function Signin() {
-    const [usuario, onChangeUsuario] = React.useState('');
+    const [email, onChangeEmail] = React.useState('');
     const [senha, onChangeSenha] = React.useState('');
+    const navigation = useNavigation();
+    const auth = getAuth();
+
+    function verificaLogin() {
+        signInWithEmailAndPassword(auth, email, senha).then((userCredencials) => {
+            navigation.navigate('TelasInternas', userCredencials.user.uid);
+        }).catch((_) => {
+            alert('Falha no login')
+        });
+    }
+
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <KeyboardAvoidingView behavior={"height"} style={styles.container}>
+            <KeyboardAvoidingView behavior={'height'} style={styles.container}>
                 <View style={styles.subContainer}>
                     <Image source={logo} style={styles.image} resizeMode='stretch' />
-                    <InputCustom placeholder='Usuário:' text={usuario} changeText={onChangeUsuario} />
+                    <InputCustom placeholder='Email:' text={email} changeText={onChangeEmail} />
                     <InputCustom placeholder='Senha:' security={true} text={senha} changeText={onChangeSenha} />
-                    <ButtonCustom title='Login' />
+                    <ButtonCustom title='Login' press={() => verificaLogin()} />
+                    <ButtonCustom title='Cadastre-se' press={() => navigation.navigate('Register')} />
                 </View>
             </KeyboardAvoidingView>
         </TouchableWithoutFeedback>

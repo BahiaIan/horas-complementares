@@ -6,8 +6,9 @@ import { Header } from '../../../components/Header';
 import { db } from "../../../config/firebaseConfig";
 import { styles } from './styles';
 
-const buscarDados = () => {
-    let DATA = [];
+function buscarDados() {
+    let DATA = [];    
+    
     onValue(ref(db, '/atividadeDisponivel'), querySnapShot => {
         DATA = [];
         for (const key of Object.keys(querySnapShot.val())) {
@@ -26,7 +27,6 @@ export function Disponiveis() {
             <FlatList
                 data={buscarDados()}
                 extraData={buscarDados()}
-                refreshing={true}
                 renderItem={({ item }) => (<AtividadesDisponiveis dados={item} />)}
                 keyExtractor={item => item.id}
             />

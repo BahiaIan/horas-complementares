@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: theme.colors.amarelo.background,
+        backgroundColor: theme.colors.amarelo.background
     },
     image: {
         width: '60%',
@@ -25,7 +25,7 @@ export const styles = StyleSheet.create({
     subContainer: {
         justifyContent: 'center',
         alignItems: 'center',
-        height: 420,
+        height: 500,
         width: '80%',
         backgroundColor: theme.colors.cinza.background
     },

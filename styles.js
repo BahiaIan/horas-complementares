@@ -7,6 +7,6 @@ export const styles = StyleSheet.create({
         // justifyContent: 'center',
         // alignItems: 'center',
         backgroundColor: theme.colors.cinza.background,
-        marginTop: 26
+        marginTop: 26,
     }
 })
