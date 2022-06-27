@@ -17,7 +17,7 @@ const perfil = {
 export function DashBoard() {
     return (
         <View style={styles.container}>
-            <ProfileHeader nome={perfil.nome} periodo={perfil.periodo} curso={perfil.curso} />
+            <ProfileHeader perfil={perfil} />
             <ScrollView showsVerticalScrollIndicator={false} >
                 <View style={styles.chatCard}>
                     <ProgressChart pontuacao={perfil.progress.grupo1} titulo='Grupo 1' />
