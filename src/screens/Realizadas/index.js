@@ -1,48 +1,32 @@
-import React from 'react';
-import { FlatList, View } from 'react-native';
-import { BotaoFlutuante } from '../../components/BotaoFlutuante';
-import { Atividade } from '../../components/Atividade';
-import { styles } from './styles';
-import { useRoute } from "@react-navigation/native";
-import { ProfileHeader } from '../../components/ProfileHeader';
 import { onValue, ref } from 'firebase/database';
+import { View } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import { AtividadesLancada } from '../../components/AtividadeLancada';
+import { BotaoFlutuante } from '../../components/BotaoFlutuante';
+import { ProfileHeader } from '../../components/ProfileHeader';
 import { db } from "../../config/firebaseConfig";
-
-const perfil = {
-    nome: 'Ian Carlos Rocha Lima',
-    periodo: '7',
-    curso: 'Bacharelado em Engenharia de Software',
-    progress: {
-        grupo1: 27,
-        grupo2: 5,
-        grupo3: 13,
-    }
-}
+import { styles } from './styles';
+const DATA = [];
 
 export function Realizadas() {
-    function buscarDados(id) {
-        let perfil = [];
-        onValue(ref(db, `/usuario/${id}/dadosPessoais`), querySnapShot => {
-            perfil = [];
-            for (const key of Object.keys(querySnapShot.val())) {
-                const dadosUsuario = querySnapShot.val()[key];
-                dadosUsuario.id = key;
-                perfil.push(dadosUsuario);
-            };
-        });
-        return perfil;
-    }
-
-    const params = useRoute().params;
-    console.log(useRoute().params)
+    onValue(ref(db, '/usuario/Mm1oof6opDdQJ5aQlnKwmWXtk0u2/atividadesLancadas/atividades'), querySnapShot => {
+        DATA.length = 0;
+        for (const key of Object.keys(querySnapShot.val())) {
+            const atividade = querySnapShot.val()[key];
+            atividade.id = key;
+            DATA.push(atividade);
+        };
+        console.log(DATA)
+    });
     return (
         <View style={styles.container}>
-            {/* <ProfileHeader perfil={buscarDados(params.id)} /> */}
-            <FlatList
-                data={[]}
-                renderItem={({ item }) => (<Atividade dados={item} route='Realizadas' />)}
-                keyExtractor={item => item.id}
-            />
+            <ProfileHeader id='Mm1oof6opDdQJ5aQlnKwmWXtk0u2' />
+
+            <ScrollView showsVerticalScrollIndicator={false}>
+                {
+                    DATA.map(item => { return <AtividadesLancada key={item.id} dados={item} route='Atividade' routeToReturn='Realizadas' /> })
+                }
+            </ScrollView>
             <BotaoFlutuante route='Adicionar' />
         </View>
     );

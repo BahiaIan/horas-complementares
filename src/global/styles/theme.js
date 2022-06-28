@@ -19,13 +19,14 @@ export const theme = {
         },
         vermelho: {
             botao: '#f53d3d',
-            botao2:'#e36b75'
+            botao2: '#e36b75'
         },
-        azul:{
-            botao:'#67b6e6'
+        azul: {
+            botao: '#67b6e6'
         },
-        verde:{
-            botao:'#B0E792'
-        }
+        verde: {
+            botao: '#B0E792'
+        },
+        preto: '#171617'
     }
 }

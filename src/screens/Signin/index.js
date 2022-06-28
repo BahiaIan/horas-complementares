@@ -1,11 +1,11 @@
 import { useNavigation } from '@react-navigation/native';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import React from 'react';
 import { Image, Keyboard, KeyboardAvoidingView, TouchableWithoutFeedback, View } from 'react-native';
 import logo from '../../assets/UTFPR.png';
 import { ButtonCustom } from '../../components/ButtonCustom';
 import { InputCustom } from '../../components/InputCustom';
 import { styles } from './styles';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 export function Signin() {
     const [email, onChangeEmail] = React.useState('');
@@ -17,6 +17,7 @@ export function Signin() {
         signInWithEmailAndPassword(auth, email, senha).then((userCredencials) => {
             navigation.navigate('TelasInternas', userCredencials.user.uid);
         }).catch((_) => {
+            navigation.navigate('TelasInternas');
             alert('Falha no login')
         });
     }

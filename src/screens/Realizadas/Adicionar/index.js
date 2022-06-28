@@ -30,10 +30,16 @@ export function Adicionar() {
 
 
     const salvar = () => {
+        let id = 'Mm1oof6opDdQJ5aQlnKwmWXtk0u2';
         if (descriptionText != '') {
-            push(ref(db, '/atividadeDisponivel'), {
+            push(ref(db, `usuario/${id}/atividadesLancadas/atividades`), {
+
             });
             onChangeDescriptionText('');
+            onChangeGrupo(grupos[0]);
+            onChangeSemestre(semestres[0]);
+            onChangeAno(anos[0]);
+            onChangeAtividade(atividades[0]);
         } else {
             alert('Um ou mais campos estão inválidos.');
         }
@@ -42,7 +48,7 @@ export function Adicionar() {
     return (
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <KeyboardAvoidingView behavior='padding' style={styles.container}>
-                <Header title='Lançar Atividade' routeToReturn='Disponiveis' />
+                <Header title='Lançar Atividade' routeToReturn='Realizadas' />
                 <View style={styles.title}>
                     <Text>
                         Defina um título para a atividade:

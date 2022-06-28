@@ -5,15 +5,16 @@ import { styles } from './styles';
 
 export function Atividade() {
     const params = useRoute().params
+    console.log(params);
     return (
         <View style={styles.container}>
-            <Header title={params.titulo} routeToReturn='AtividadesRealizadas' />
+            <Header title={params.dados.titulo} routeToReturn={params.routeToReturn} />
             <View>
                 <Text style={styles.title}>
                     Descrição:
                 </Text>
                 <Text style={styles.content}>
-                    {params.descricao}
+                    {params.dados.descricao}
                 </Text>
             </View>
             <View>
@@ -21,7 +22,7 @@ export function Atividade() {
                     Pontuação:
                 </Text>
                 <Text style={styles.content}>
-                    {params.pontuacao}
+                    {params.dados.pontuacao}
                 </Text>
             </View>
             <View>
@@ -29,7 +30,7 @@ export function Atividade() {
                     Periodo da Atividade:
                 </Text>
                 <Text style={styles.content}>
-                    {params.periodo}
+                    {params.dados.periodo}
                 </Text>
             </View>
             <View>
@@ -37,7 +38,7 @@ export function Atividade() {
                     Grupo:
                 </Text>
                 <Text style={styles.content}>
-                    {params.grupo}
+                    {params.dados.grupo}
                 </Text>
             </View>
             <View>
@@ -45,7 +46,7 @@ export function Atividade() {
                     Total de Horas Realizadas:
                 </Text>
                 <Text style={styles.content}>
-                    {params.comprovante}
+                    {params.dados.comprovante}
                 </Text>
             </View>
         </View>
